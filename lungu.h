@@ -13,6 +13,7 @@ namespace lungu
 	void processFixedSizeMatrix(const std::string &inputFile, const std::string &outputFilename);
 	void transformMatrix(int *matrix, int rows, int cols);
 	void writeMatrixToFile(const std::string &filename, const int *matrix, int rows, int cols);
+	void processDynamicMatrix(const std::string &inputFilename, const std::string &outputFilename);
 
 }
 
