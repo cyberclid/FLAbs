@@ -9,15 +9,26 @@ namespace lungu
 
 		while (top <= bottom && left <= right)
 		{
-			for (int i = bottom; i >= top; --i)
+			for (int i = left; i <= right; ++i)
 			{
-				matrix[i * cols + left] += value++;
+				matrix[bottom * cols + i] += value++;
 			}
-			left++;
+			bottom--;
+
+			
+		
+			for (int i = bottom; i >= top; --i)
+	
+			{
+			      matrix[i * cols + right] += value++;
+			}   
+				
+			right--;
+			
 
 			if (top <= bottom)
 			{
-				for (int i = left; i <= right; ++i)
+				for (int i = right; i >= left; --i)
 				{
 					matrix[top * cols + i] += value++;
 				}
@@ -28,18 +39,10 @@ namespace lungu
 			{
 				for (int i = top; i <= bottom; ++i)
 				{
-					matrix[i * cols + right] += value++;
-				}
-				right--;
-			}
 
-			if (top <= bottom)
-			{
-				for (int i = right; i >= left; --i)
-				{
-					matrix[bottom * cols + 1] += value++;
+   			            matrix[i * cols + left] += value++;
 				}
-				bottom--;
+				left++;
 			}
 		}
 	}
